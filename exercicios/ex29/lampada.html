@@ -4,20 +4,29 @@
         <title>Teste JavaStript</title>
         <meta charset="UTF-8">
         <script>
-            function acendeu(){
-                document.getElementById('luz').src="lampada-acesa.jpg"
-            }
-            function apagar(){
-                document.getElementById("luz").src="lampada-apagada.jpg"
-            }
-            function quabrar(){
-                document.getElementById("luz").src="lampada-quebrada.jpg"
+            var quebrada=false
+            function estado(tipo){
+                if(tipo==1){
+                    arquivo="lampada-acesa.jpg"
+                }
+                if(tipo==2){
+                    arquivo="lampada-apagada.jpg"
+                }
+                if(tipo==3){
+                    arquivo="lampada-quebrada.jpg"
+                }
+                if(!quebrada){
+                    document.getElementById("luz").src=arquivo;
+                    if(tipo==3){
+                        quebrada=true;
+                    }
+                }
             }
         </script>
     </head>
     <body>
         <h1>Acenda a lâmpada</h1>
-        <img src="lampada-apagada.jpg" id="luz"onmousemove="acendeu()"
-        onmouseout="apagar()" onclick="quabrar()">
+        <img src="lampada-apagada.jpg" id="luz"onmousemove="estado(1)"
+        onmouseout="estado(2)" onclick="estado(3)">
     </body>
 </html>
