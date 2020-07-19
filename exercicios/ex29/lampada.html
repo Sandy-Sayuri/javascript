@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Teste JavaStript</title>
+        <meta charset="UTF-8">
+        <script>
+            function acendeu(){
+                document.getElementById('luz').src="lampada-acesa.jpg"
+            }
+            function apagar(){
+                document.getElementById("luz").src="lampada-apagada.jpg"
+            }
+            function quabrar(){
+                document.getElementById("luz").src="lampada-quebrada.jpg"
+            }
+        </script>
+    </head>
+    <body>
+        <h1>Acenda a lâmpada</h1>
+        <img src="lampada-apagada.jpg" id="luz"onmousemove="acendeu()"
+        onmouseout="apagar()" onclick="quabrar()">
+    </body>
+</html>
